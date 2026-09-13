@@ -51,10 +51,10 @@ python3 -m http.server --bind localhost --directory site 8817
 
 Open `http://localhost:8817/`. Stop the server with Ctrl-C.
 
-## Release preparation
+## Published website
 
-This repository is a local candidate. The proposed website destination is `https://thedarknitefalls.github.io/building-with-codex/`; it is not deployed by this preparation. The proposed GitHub repository is `TheDarkniteFalls/building-with-codex`.
+[Visit Building with Codex](https://thedarknitefalls.github.io/building-with-codex/) or [browse the public repository](https://github.com/TheDarkniteFalls/building-with-codex). The initial release was published and verified on 13 September 2026.
 
-The manual `workflow_dispatch` Pages workflow uploads **only `site/`**. It has no push or pull-request trigger. Repository creation, commits, pushing, configuring Pages, and dispatching the workflow require separate authorization. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md).
+The manual `workflow_dispatch` Pages workflow uploads **only `site/`**. It has no push or pull-request trigger. Future commits, pushes, repository settings changes, and deployments require explicit authorization and the applicable checks. See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for the initial release record and future release guidance.
 
 By Mike Parsons. Built with AI assistance. This is an independent project, not an official OpenAI site.
