@@ -1,27 +1,25 @@
 # Building with Codex
 
-Practical ways to complete substantial useful work with Codex—from a clear brief to a checked result.
+I use Codex to help build software, check changes and work through review. Here you can follow a contribution to Inspect AI, try a small validation example, or pick a guide for your own project.
 
-Define the work. Build and check. Review the result.
+[Visit the website](https://thedarknitefalls.github.io/building-with-codex/) to read the cases, or start with the handbook below.
 
 ## Work delivered
 
-Three linked case studies put concrete examples before evidence details:
+Start with the Inspect contribution to see how a change developed through review:
 
-1. [Repair the check, preserve the boundary](site/cases/validation-repair.html): an author-reported local validation repair, with a separate [runnable synthetic coverage example](site/examples/unchanged-file-demo.py).
-2. [When a successful target is not enough](site/cases/bazel-evidence.html): complete and truncated public synthetic Bazel BEP records, pinned to an exact adapter revision.
-3. [Follow a contribution through review](site/cases/inspect-ai.html): [Inspect AI PR #4713](https://github.com/UKGovernmentBEIS/inspect_ai/pull/4713), including maintainer feedback, a Trio repair and the accepted merge.
+1. [Adding S3 ETag support to Inspect AI](https://thedarknitefalls.github.io/building-with-codex/cases/inspect-ai.html): why callers needed the token returned by an S3 write, what review caught, and what was merged.
+2. [Why the validation check missed an unchanged file](https://thedarknitefalls.github.io/building-with-codex/cases/validation-repair.html): an author-reported repair, with a separate [runnable synthetic example](site/examples/unchanged-file-demo.py) you can try locally.
+3. [Why a successful build target doesn’t prove an output exists](https://thedarknitefalls.github.io/building-with-codex/cases/bazel-evidence.html): compare two synthetic build records and see why missing evidence changes the result.
 
-[Open the website overview](https://thedarknitefalls.github.io/building-with-codex/#work). The three case pages share example, evidence and previous/home/next navigation. Repository HTML links show source on GitHub; use the local preview below to read the pages as a website.
-
-The local repair is an author-reported account, not publicly reproducible historical evidence. The Bazel walkthrough uses public synthetic sources. The Inspect case uses public issue, review and merge records; reported tests were not rerun for the article. AI assistance and the limits of each claim are stated in the articles. None establishes speed, productivity or general capability.
+The Inspect case links public issue, review and merge records. The validation repair is my account of local work; its original receipts are unavailable. The Bazel case uses public synthetic records. Each article explains what its evidence supports. Reported historical tests were not rerun for the articles, and these examples make no claim about speed, productivity or general capability.
 
 ## Start building
 
-Learn the method. Then make it concrete.
+If you are new to working with an AI coding assistant, start with the handbook. If you already have a recurring task in mind, try the starter.
 
-1. [Agent Operator Handbook](https://github.com/TheDarkniteFalls/agent-operator-handbook): learn to set scope, choose sources, and review AI-assisted work.
-2. [Reliable AI Work Starter](https://github.com/TheDarkniteFalls/reliable-ai-work-starter): apply the method to one recurring workflow in your own workspace.
+1. [Agent Operator Handbook](https://github.com/TheDarkniteFalls/agent-operator-handbook): decide what to ask for, what information to provide, and how to check the answer.
+2. [Reliable AI Work Starter](https://github.com/TheDarkniteFalls/reliable-ai-work-starter): write down one recurring task and the checks you will use to decide whether it worked.
 
 ## Improve your method
 
@@ -29,14 +27,20 @@ Choose a tool for the problem in front of you.
 
 | Need | Tool |
 | --- | --- |
-| Make scope and working expectations explicit | [Codex Project Instructions Starter](https://github.com/TheDarkniteFalls/codex-project-instructions-starter) |
-| Select context with explicit obligations and a checkable receipt | [Context Contract Compiler](https://github.com/TheDarkniteFalls/context-contract-compiler) |
+| Tell Codex what it may change and how to check its work | [Codex Project Instructions Starter](https://github.com/TheDarkniteFalls/codex-project-instructions-starter) |
+| Choose source material and record why it was included | [Context Contract Compiler](https://github.com/TheDarkniteFalls/context-contract-compiler) |
 | Check that an important workflow still works | [Green-Spine QA Pattern](https://github.com/TheDarkniteFalls/green-spine-qa-pattern) |
-| Bind evidence receipts to a specific revision | [EvidenceGate](https://github.com/TheDarkniteFalls/evidencegate) |
+| Record which version of your work the evidence applies to | [EvidenceGate](https://github.com/TheDarkniteFalls/evidencegate) |
 
 [Explore Reliability Lab](https://github.com/TheDarkniteFalls/local-assistant-reliability-lab), the wider supporting collection of guides, tools, and patterns.
 
-Building with Codex is independent of [Detecting AI Deception](https://thedarknitefalls.github.io/detecting-ai-deception/), which helps people examine bounded AI claims against observable evidence. Neither direction is an umbrella for the other.
+To compare a specific agent claim with evidence you provide, try [Agent Claim Check](https://thedarknitefalls.github.io/detecting-ai-deception/). It does not determine intent or gather or authenticate evidence.
+
+## Three checks worth keeping
+
+- **Start from the published version.** Check the repository’s default branch and current commit before editing an old checkout. For a deployed site, also identify the revision that is actually live; a manual deployment may lag behind the branch. Preserve local work, then compare your intended changes against the verified base and deployed revision.
+- **Change the source of generated content.** If a script builds a page or README section, edit its input and run the generator. Run it again, or use its drift check, to confirm the output is up to date. A manual edit to generated output can disappear on the next build.
+- **Check what the browser actually did.** After resizing or clicking through a page, inspect its current width, address and visible content. Follow the links and try the keyboard controls. A successful automation call alone does not show that the intended page or mobile layout was tested.
 
 ## Website and local preview
 
