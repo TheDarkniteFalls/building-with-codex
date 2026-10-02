@@ -6,16 +6,15 @@ Define the work. Build and check. Review the result.
 
 ## Work delivered
 
-Mike Parsons ([@TheDarkniteFalls](https://github.com/TheDarkniteFalls)) contributed [Inspect AI PR #4713](https://github.com/UKGovernmentBEIS/inspect_ai/pull/4713), “Return ETags from write_eval_log.”
+Three linked case studies put concrete examples before evidence details:
 
-- **Problem:** [Issue #4699](https://github.com/UKGovernmentBEIS/inspect_ai/issues/4699) requested the ETag from an S3 log write so callers could chain conditional writes.
-- **Implementation:** `WriteEvalLogResult` returns the S3 write ETag from `write_eval_log`, or `None` for non-S3 writes.
-- **Review and repairs:** maintainer @ransomr requested changes. Repairs covered ETag capture, tracing, missing-file behavior, documentation, and the [Trio S3 read path](https://github.com/UKGovernmentBEIS/inspect_ai/commit/41d1eea0a1250882f185164006537cf470f81890). See the [repair summary](https://github.com/UKGovernmentBEIS/inspect_ai/pull/4713#issuecomment-5423644553).
-- **Accepted outcome:** @ransomr [approved the repaired PR](https://github.com/UKGovernmentBEIS/inspect_ai/pull/4713#pullrequestreview-5043840043), which was [merged on 27 August 2026](https://github.com/UKGovernmentBEIS/inspect_ai/commit/e789de9a2a38961ce4d8051d04f62a5bc8f66c46).
+1. [Repair the check, preserve the boundary](site/cases/validation-repair.html): an author-reported local validation repair, with a separate [runnable synthetic coverage example](site/examples/unchanged-file-demo.py).
+2. [When a successful target is not enough](site/cases/bazel-evidence.html): complete and truncated public synthetic Bazel BEP records, pinned to an exact adapter revision.
+3. [Follow a contribution through review](site/cases/inspect-ai.html): [Inspect AI PR #4713](https://github.com/UKGovernmentBEIS/inspect_ai/pull/4713), including maintainer feedback, a Trio repair and the accepted merge.
 
-**AI assistance:** OpenAI Codex assisted implementation, review, and validation. The public PR says the final diff and results were reviewed before publication. Maintainer review comments also disclose AI generation with maintainer review before posting.
+[Open the website overview](https://thedarknitefalls.github.io/building-with-codex/#work). The three case pages share example, evidence and previous/home/next navigation. Repository HTML links show source on GitHub; use the local preview below to read the pages as a website.
 
-**Limits:** this public record shows one specific contribution and its repair cycle. It does not establish speed, productivity, or general capability. A measured case study is a future possibility, not a result reported here. Public status and selected routes were checked on 13 September 2026.
+The local repair is an author-reported account, not publicly reproducible historical evidence. The Bazel walkthrough uses public synthetic sources. The Inspect case uses public issue, review and merge records; reported tests were not rerun for the article. AI assistance and the limits of each claim are stated in the articles. None establishes speed, productivity or general capability.
 
 ## Start building
 
@@ -41,7 +40,7 @@ Building with Codex is independent of [Detecting AI Deception](https://thedarkni
 
 ## Website and local preview
 
-The website is plain HTML and CSS in `site/`. It has no JavaScript, backend, accounts, analytics, build step, or package dependencies.
+The website is plain HTML and CSS in `site/`. It has no JavaScript, backend, accounts, analytics, build step, or package dependencies. The optional downloadable Python example uses only the standard library; it is not executed by the site.
 
 From the repository root:
 
