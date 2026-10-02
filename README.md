@@ -36,6 +36,12 @@ Choose a tool for the problem in front of you.
 
 To compare a specific agent claim with evidence you provide, try [Agent Claim Check](https://thedarknitefalls.github.io/detecting-ai-deception/). It does not determine intent or gather or authenticate evidence.
 
+## Three checks worth keeping
+
+- **Start from the published version.** Check the repository’s default branch and current commit before editing an old checkout. For a deployed site, also identify the revision that is actually live; a manual deployment may lag behind the branch. Preserve local work, then compare your intended changes against the verified base and deployed revision.
+- **Change the source of generated content.** If a script builds a page or README section, edit its input and run the generator. Run it again, or use its drift check, to confirm the output is up to date. A manual edit to generated output can disappear on the next build.
+- **Check what the browser actually did.** After resizing or clicking through a page, inspect its current width, address and visible content. Follow the links and try the keyboard controls. A successful automation call alone does not show that the intended page or mobile layout was tested.
+
 ## Website and local preview
 
 The website is plain HTML and CSS in `site/`. It has no JavaScript, backend, accounts, analytics, build step, or package dependencies. The optional downloadable Python example uses only the standard library; it is not executed by the site.
